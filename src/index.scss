@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+  padding: 0;
+  text-decoration: none;
+  color: #222
+}
+
+button {
+  padding: 10px 15px;
+  
+  font-size: 16px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  &:hover {
+    opacity: 0.4;
+  }
+}
+
+.m-b-5{
+  margin-bottom: 5px;
+}
+
+.m-b-10{
+  margin-bottom: 10px;
+}
+
+.m-b-15{
+  margin-bottom: 15px;
+}
+
+.m-b-20{
+  margin-bottom: 20px;
+}
+
+.m-t-5{
+  margin-top: 5px;
+}
+
+.m-t-10{
+  margin-top: 10px;
+}
+
+.m-t-15{
+  margin-top: 15px;
+}
+
+.m-t-20{
+  margin-top: 20px;
+}

@@ -1,0 +1,28 @@
+.poster-image{
+  max-height: 513px;
+  max-width: 342px;
+  margin: 0 20px;
+}
+
+.poster-not-loaded{
+  img {
+    display: none;
+  }
+  .poster-placeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 518px;
+    width: 342px;
+  
+    margin: 0 20px;
+    margin-right: 20px;
+  
+    background-color: #efefef;   
+  }
+}
+
+.poster-loaded .poster-placeholder{
+  display: none;
+}

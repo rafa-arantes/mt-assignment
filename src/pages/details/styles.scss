@@ -1,0 +1,26 @@
+.poster-description-section {
+  width: 100%;
+  max-width: 1280px;
+
+  padding: 0px 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.additional-info-section {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 30px auto;
+  padding: 20px 0px;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}

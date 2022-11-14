@@ -1,0 +1,41 @@
+.aside-movie-description-container {
+  max-width: 500px;
+}
+
+.details-action-section {
+  h2,
+  h3,
+  p {
+    font-family: serif;
+    color: #555;
+  }
+  button {
+    background-color: orange;
+    color: white;
+  }
+}
+
+.details-adventure-section {
+  h2,
+  h3,
+  p {
+    font-family: sans-serif;
+    color: #444;
+  }
+  button {
+    background-color: blue;
+    color: white;
+  }
+}
+
+.details-comedy-section {
+  h2,
+  h3,
+  p {
+    font-weight: 600;
+    color: #555;
+  }
+  button {
+    background-color: cyan;
+  }
+}
