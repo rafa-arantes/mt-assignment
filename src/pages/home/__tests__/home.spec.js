@@ -12,8 +12,16 @@ const server = setupServer(
   rest.get('http://api.themoviedb.org/3/discover/movie', (req, res, ctx) => res(ctx.json(HOME_MOCK))),
 );
 
+const errorHandler = [
+  rest.get('http://api.themoviedb.org/3/movie/900667', (req, res, ctx) => res(ctx.status(500), ctx.json(null))),
+];
+
 beforeAll(() => {
   server.listen();
+});
+
+afterEach(() => {
+  server.resetHandlers();
 });
 
 afterAll(() => {
@@ -47,5 +55,37 @@ describe('Home Page', () => {
     expect(screen.queryByText('Action')).toBeDefined();
     expect(screen.queryByText('Adventure')).toBeDefined();
     expect(screen.queryByText('Comedy')).toBeDefined();
+  });
+});
+
+// ERROR TESTING
+
+const errorQueryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
+describe('Home Page with Error', () => {
+  console.error = jest.fn(); // Suppress error messages
+  test('Shows Loading on first load', async () => {
+    server.use(...errorHandler);
+    const screen = render(
+      <QueryClientProvider client={errorQueryClient}>
+        <Home />
+      </QueryClientProvider>,
+    );
+    await waitForElementToBeRemoved(await screen.findByTestId('loading'));
+  });
+
+  test('Shows Movie data after loading', async () => {
+    server.use(...errorHandler);
+    const screen = render(
+      <QueryClientProvider client={errorQueryClient}>
+        <Home />
+      </QueryClientProvider>,
+    );
+    expect(screen.queryByText('Something went wrong:')).toBeTruthy();
   });
 });
