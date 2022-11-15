@@ -16,10 +16,8 @@ jest.mock('react-router-dom', () => ({
 }));
 
 const errorHandler = [rest.get('http://api.themoviedb.org/3/movie/900667', (req, res, ctx) => res(ctx.status(500), ctx.json(null)))];
-
-const server = setupServer(
-  rest.get('http://api.themoviedb.org/3/movie/900667', (req, res, ctx) => res(ctx.json(DETAILS_MOCK))),
-);
+const successHandler = [rest.get('http://api.themoviedb.org/3/movie/900667', (req, res, ctx) => res(ctx.json(DETAILS_MOCK)))];
+const server = setupServer(...successHandler);
 
 beforeAll(() => {
   server.listen();
@@ -93,7 +91,7 @@ describe('Details Page with Error', () => {
     await waitForElementToBeRemoved(await screen.findByTestId('loading'));
   });
 
-  test('Shows Movie data after loading', async () => {
+  test('Show error message', async () => {
     server.use(...errorHandler);
     const screen = render(
       <QueryClientProvider client={errorQueryClient}>
@@ -103,5 +101,18 @@ describe('Details Page with Error', () => {
 
     expect(screen.queryByText('Something went wrong:')).toBeTruthy();
     expect(screen.queryByText('Request failed with status code 500')).toBeTruthy();
+  });
+
+  test('Show movie details after trying again', async () => {
+    server.use(...successHandler);
+    const screen = render(
+      <QueryClientProvider client={errorQueryClient}>
+        <Details />
+      </QueryClientProvider>,
+    );
+    await act(() => userEvent.click(screen.queryByText('Try again')));
+
+    expect(screen.queryByText(DETAILS_MOCK.title)).toBeTruthy();
+    expect(screen.queryByText(DETAILS_MOCK.overview)).toBeTruthy();
   });
 });
