@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { render, waitForElementToBeRemoved, act } from '@testing-library/react';
