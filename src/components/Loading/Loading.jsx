@@ -3,7 +3,7 @@ import './styles.scss';
 
 function LoadingScreen() {
   return (
-    <div className="centralize-loading" data-testid="loading">
+    <div className="centralize-loading center-flex" data-testid="loading">
       <div>
         <div className="lds-ring">
           <div />

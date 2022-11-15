@@ -14,7 +14,7 @@
   width: 100%;
   height: 100vh;
 
-  padding: 20px 10px;
+  padding: 1.25rem 0.625rem;
 
   border-left: solid 1px #cdcdcd;
   background-color: #fff;
@@ -50,19 +50,17 @@
   background-color: red;
   color: #fff;
 
-  margin-left: 10px;
+  margin-left: 0.625rem;
   border-radius: 50%;
-  padding: 0px 2px 2px;
+  padding: 0 0.125rem 0.125rem;
   
   width: 20px;
   height: 20px;
   
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 
   font-weight: 1000;
-  line-height: 0px;
+  line-height: 0;
 }
 
 @keyframes wishlist-drawer-animation {

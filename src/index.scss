@@ -7,9 +7,9 @@
 }
 
 button {
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
   
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 
   border: none;
@@ -22,34 +22,40 @@ button {
   }
 }
 
+.center-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .m-b-5{
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 
 .m-b-10{
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .m-b-15{
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .m-b-20{
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .m-t-5{
-  margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 
 .m-t-10{
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 .m-t-15{
-  margin-top: 15px;
+  margin-top: 0.9375rem;
 }
 
 .m-t-20{
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }

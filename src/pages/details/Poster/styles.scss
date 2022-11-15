@@ -1,11 +1,14 @@
 .poster-image{
   max-height: 513px;
   max-width: 342px;
-  margin: 0 20px;
+  margin: 0 1.25rem;
+  @media screen and (max-width: 400px) {
+    max-width: 300px
+  }
 }
 
 .poster-not-loaded{
-  img {
+  .poster-image {
     display: none;
   }
   .poster-placeholder{
@@ -16,9 +19,7 @@
     height: 518px;
     width: 342px;
   
-    margin: 0 20px;
-    margin-right: 20px;
-  
+    margin: 0 1.25rem;
     background-color: #efefef;   
   }
 }

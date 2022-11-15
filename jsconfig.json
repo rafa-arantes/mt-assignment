@@ -4,11 +4,11 @@
       "allowSyntheticDefaultImports": false,
       "baseUrl": "./",
       "paths": {
-          "root/*": ["src/*"],
           "assets/*": ["src/assets/*"],
           "components/*": ["src/components/*"],
           "hooks/*": ["src/hooks/*"],
           "pages/*": ["src/pages/*"],
+          "root/*": ["src/*"],
       }
   },
   "exclude": ["node_modules", "dist"]

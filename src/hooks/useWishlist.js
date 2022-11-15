@@ -15,6 +15,7 @@ const addMovieAtom = atom(null, (get, set, wishlistItem) => {
   );
   set(wishlistAtom, { ...get(wishlistAtom), [wishlistItem.id]: wishlistItem });
 });
+
 const removeMovieAtom = atom(null, (get, set, wishlistItem) => {
   // Remove wishlistItem from object without mutating it
   // eslint-disable-next-line no-unused-vars
@@ -22,6 +23,7 @@ const removeMovieAtom = atom(null, (get, set, wishlistItem) => {
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(newWishlist));
   set(wishlistAtom, newWishlist);
 });
+
 const showWishlistAtom = atom(false, (get, set) => set(showWishlistAtom, !get(showWishlistAtom)));
 
 const useWishlist = () => {

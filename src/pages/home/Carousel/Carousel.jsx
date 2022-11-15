@@ -16,7 +16,7 @@ function Carousel({ genreId, genreName }) {
   return (
     <section className="m-t-10 m-b-20">
       <h2 className="m-b-20">{genreName}</h2>
-      <div className="carousel-wrapper">
+      <div className="carousel-wrapper center-flex">
         <Swiper
           autoplay={AUTOPLAY_SETTINGS}
           modules={[Autoplay]}

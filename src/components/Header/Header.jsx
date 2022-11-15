@@ -12,7 +12,7 @@ function Header() {
     <header className="app-header">
       <Link to="/"><p>Home</p></Link>
       <button type="button" onClick={handleShowWishlist}>
-        {showWishlist ? 'Hide' : 'Show'}
+        {showWishlist ? 'Hide ' : 'Show '}
         Wishlist
       </button>
     </header>
