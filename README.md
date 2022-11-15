@@ -9,6 +9,11 @@ The project is using `yarn` to manage dependencies, so:
  
 Should start at port 8080.
  
+### Running tests
+ 
+- run `yarn` to install dependencies
+- then `yarn test`
+
 ### Architecture
  
 #### Components Folder
@@ -36,7 +41,7 @@ Suspenseful hooks should be kept inside the `hooks/suspenseful` folder, while no
  
 #### Data Fetching
  
-All the data fetching is made using `react-query` and custom hooks. `react-query` is a great library for data fetching/mutating, taking care of most challenges that involve calling an async API. By default it de-dupes calls made with the same arguments, returning cached responses instead of re-calling the same API. It also has a very straightforward caching/cache invalidation API.
+All the data fetching is done using `react-query` and custom hooks. `react-query` is a great library for data fetching/mutating, taking care of most challenges that involve calling an async API. By default it de-dupes calls made with the same arguments, returning cached responses instead of re-calling the same API. It also has a very straightforward caching/cache invalidation API.
  
 All the state related to API data is kept inside the data fetching hooks, providing a solid separation between the component state and the API state. The only way to access it is through hooks, and if possible, all the serialization should be done inside of the hooks as well.
  
