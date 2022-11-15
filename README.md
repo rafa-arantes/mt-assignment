@@ -28,7 +28,7 @@ Every component folder can have child component folders inside of it, just place
 
 #### Hooks
 
-The hooks are divided in two kinds of hooks: `suspenseful` and normal hooks. A `suspenseful` hook, it's a hook that depends on the usage of a `React.Suspense` up in the component tree to manage it's loading state and an `ErrorBoundary` to manage it's error states. This was made in order to leverage the loading/error states from components `(e.g: if(loading) return null)` to a place where it can be handled in batches, while also giving flexibility to handle priority between loading states.
+The hooks are divided in two kinds of hooks: `suspenseful` and normal hooks. A `suspenseful` hook, it's a hook that depends on the usage of a `React.Suspense` up in the component tree to manage it's loading state and an `ErrorBoundary` to manage it's error states. This was made in order to leverage the loading/error states from components `(e.g: if(loading) return 'loading')` to a place where it can be handled in batches, while also giving flexibility to handle priority between loading states.
 
 The separation between hooks is straight forward:
 Suspenseful hooks should be kept inside `hooks/suspenseful` folder, while normal hooks can be kept at the root of the `hooks` folder.
