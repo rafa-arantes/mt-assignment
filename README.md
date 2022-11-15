@@ -55,3 +55,6 @@ The `react-query` library is in charge of managing server data, as it provides u
 The use case for `jotai` came from the need of having a global `wishlist` that could be accessed anywhere in the application. `jotai` also makes it easy to integrate with LocalStorage, through the get/set primitives, which gives you a perfect place to call LocalStorage and manipulate its state. <br>
 Apart from `jotai` and `react-query` all the state is managed through component state.
  
+#### Testing
+
+Testing is done through `testing-library` with `msw` to mock API calls. It tests the success and error cases of the home and details pages. It also tests network errors and success after previous error. To test the interaction from the user, I used `userEvents`, as it's the recommended library to use. Further testing like hook testing can be achieved with `renderHook` and `msw` from `testing-library`.
